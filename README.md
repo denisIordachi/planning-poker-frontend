@@ -57,7 +57,7 @@ planning-poker-frontend/
 2. **Start Frontend**
 
    ```bash
-   yarn run
+   yarn run dev
    ```
 
    Opens at [http://localhost:5173](http://localhost:5173).
@@ -79,7 +79,7 @@ A companion backend repo (`planning-poker-backend`) handles Socket.io server log
 ```bash
 git clone https://github.com/denisIordachi/planning-poker-backend.git
 yarn install
-yarn run   # starts server on configured port
+yarn run dev  # starts server on configured port
 ```
 
 ---
