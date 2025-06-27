@@ -1,56 +1,111 @@
-Planning Poker Estimation Tool
+# Planning Poker Estimation Tool
 
-A real‑time, responsive Planning Poker app with 3D card flips, dark/light theme toggle, and collaborative voting built with modern frontend technologies.
+A real‑time, responsive Planning Poker app with ✨3D card flips✨, dark/light theme toggle, and collaborative voting built with modern frontend technologies.
 
+---
 
+## 🎯 Features
 
-🎯 Features
+* **Create & Join Rooms**: Spin up a new room or join via a shareable URL.
+* **Real‑Time Voting**: Live updates powered by Socket.io.
+* **3D Flip Animations**: Framer Motion–driven card flips with upright text.
+* **Dark & Light Mode**: Class-based toggle with preference saved in `localStorage`.
+* **Responsive Layout**: Adaptive grid (2 columns on xs, 3 on sm, 4 on md+).
+* **Name Validation**: Disables actions until a display name is entered.
 
--Create & Join Rooms: Instantly spin up a new room or join via a shareable URL.
--Real‑Time Voting: Socket‑powered live updates as team members cast their cards.
--3D Flip Animations: Beautiful Framer Motion–driven card‑flip effect with upright text on both faces.
--Dark & Light Mode: Class‑based theme toggle with persistent preference in localStorage.
--Name Validation: Prevents room creation/join without entering a display name.
+---
 
+## 🚀 Tech Stack
 
+* **React 18** + **TypeScript**
+* **Vite** (dev server & build)
+* **Tailwind CSS v4** (`darkMode: 'class'`)
+* **Framer Motion** (animations)
+* **Socket.io-client** (realtime)
+* **React Router v6** (routing)
 
-🚀 Tech Stack
+---
 
--Framework: React 18 + TypeScript
--Bundler: Vite
--Styling: Tailwind CSS v4 (darkMode: 'class')
--Animations: Framer Motion
--Realtime: Socket.io-client
--Routing: React Router v6
+## 🏗️ Project Structure
 
-
-
-🏗️ Project Structure
-
+```
 planning-poker-frontend/
-├── public/                # Static assets & index.html
+├── public/                 # Static assets & index.html
 ├── src/
-│   ├── pages/        # <Lobby /> and <RoomPage />
-│   ├── contexts/
-│   │   └── RoomContext.tsx # Socket.io context + join/create logic
-│   ├── types.ts           # Shared TS types (Room, User)
-│   ├── App.tsx            # Layout, theme toggle, Routes
-│   ├── main.tsx           # Root render, global CSS import
-│   └── index.css          # Tailwind directives + global resets
-├── postcss.config.cjs     # PostCSS plugins (tailwindcss, autoprefixer)
+│   ├── components/         # <Lobby />, <RoomPage />
+│   ├── contexts/           # RoomContext (Socket.io logic)
+│   ├── types.ts            # TS types (Room, User)
+│   ├── App.tsx             # Layout, theme toggle, routes
+│   ├── main.tsx            # Root render, global CSS import
+│   └── index.css           # Tailwind directives & global resets
+├── tailwind.config.cjs     # Tailwind config
+├── postcss.config.cjs      # PostCSS plugins
 ├── package.json
-└── README.md              # <-- You are here
+└── README.md               # This file
+```
 
-🛠️ Setup & Development
+---
 
-Clone & Install
+## 🛠️ Setup & Development
 
-1. git clone <repo-url>
-2. yarn install
-3. run backend service: yarn dev
-4. run this project: yarn dev
+1. **Clone & Install**
 
+   ```bash
+   git clone https://github.com/denisIordachi/planning-poker-frontend.git
+   cd planning-poker-frontend
+   npm install
+   ```
 
+2. **Start Frontend**
 
-Theme Persistence
-Theme preference stored under localStorage.theme ('light' | 'dark').
+   ```bash
+   npm run dev
+   ```
+
+   Opens at [http://localhost:5173](http://localhost:5173).
+
+3. **Build for Production**
+
+   ```bash
+   npm run build
+   ```
+
+   Output in `dist/` ready to deploy.
+
+---
+
+## 🔧 Backend Setup (Separate Repo)
+
+A companion backend repo (`planning-poker-backend`) handles Socket.io server logic. To set it up:
+
+```bash
+git clone https://github.com/denisIordachi/planning-poker-backend.git
+cd planning-poker-backend
+npm install
+npm run dev   # starts server on configured port
+```
+
+Then point the frontend to the server via `.env`:
+
+```
+VITE_SOCKET_URL=http://localhost:4000
+```
+
+---
+
+## ⚙️ Configuration
+
+* **Socket URL**: `import.meta.env.VITE_SOCKET_URL` (defaults to `http://localhost:4000`).
+* **Theme**: stored under `localStorage.theme` (`'light'` or `'dark'`).
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Please open issues or PRs, follow code style, and include clear commit messages.
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) © Denis Iordachi
