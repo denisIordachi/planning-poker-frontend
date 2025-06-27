@@ -10,7 +10,6 @@ A real‑time, responsive Planning Poker app with ✨3D card flips✨, dark/ligh
 * **Real‑Time Voting**: Live updates powered by Socket.io.
 * **3D Flip Animations**: Framer Motion–driven card flips with upright text.
 * **Dark & Light Mode**: Class-based toggle with preference saved in `localStorage`.
-* **Responsive Layout**: Adaptive grid (2 columns on xs, 3 on sm, 4 on md+).
 * **Name Validation**: Disables actions until a display name is entered.
 
 ---
@@ -52,14 +51,13 @@ planning-poker-frontend/
 
    ```bash
    git clone https://github.com/denisIordachi/planning-poker-frontend.git
-   cd planning-poker-frontend
-   npm install
+   yarn install
    ```
 
 2. **Start Frontend**
 
    ```bash
-   npm run dev
+   yarn run
    ```
 
    Opens at [http://localhost:5173](http://localhost:5173).
@@ -67,7 +65,7 @@ planning-poker-frontend/
 3. **Build for Production**
 
    ```bash
-   npm run build
+   yarn build
    ```
 
    Output in `dist/` ready to deploy.
@@ -80,32 +78,13 @@ A companion backend repo (`planning-poker-backend`) handles Socket.io server log
 
 ```bash
 git clone https://github.com/denisIordachi/planning-poker-backend.git
-cd planning-poker-backend
-npm install
-npm run dev   # starts server on configured port
-```
-
-Then point the frontend to the server via `.env`:
-
-```
-VITE_SOCKET_URL=http://localhost:4000
+yarn install
+yarn run   # starts server on configured port
 ```
 
 ---
 
 ## ⚙️ Configuration
 
-* **Socket URL**: `import.meta.env.VITE_SOCKET_URL` (defaults to `http://localhost:4000`).
 * **Theme**: stored under `localStorage.theme` (`'light'` or `'dark'`).
 
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please open issues or PRs, follow code style, and include clear commit messages.
-
----
-
-## 📄 License
-
-[MIT](LICENSE) © Denis Iordachi
