@@ -8,7 +8,7 @@ import {
 } from 'react';
 import { io, Socket } from 'socket.io-client';
 import type { Room } from '../types';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const socket: Socket = io('http://localhost:4000');
 console.log('Socket initialized:', socket);
